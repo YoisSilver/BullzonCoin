@@ -1,0 +1,107 @@
+.welcome {
+  margin: 5rem 0 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  .whitelinesmall::before {
+    display: flex;
+    content: "";
+    position: relative;
+    margin: auto;
+    height: 0.15rem;
+    background: white;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 0.5rem;
+    .content {
+      padding: 4rem 8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      .title {
+        font-size: 1.4rem;
+      }
+      .description {
+        font-size: 1.1rem;
+        a {
+          color: black;
+          font-weight: bold;
+        }
+      }
+      .link {
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+        display: flex;
+        gap: 1rem;
+        svg {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .image {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      img {
+        height: 22rem;
+      }
+    }
+  }
+  .pink {
+    background-color: rgb(251, 164, 201);
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 1080px) {
+  .welcome {
+    margin: 0;
+    .container {
+      margin: 0.5rem;
+      .content {
+        padding: 3rem 2rem;
+        border-radius: 2rem;
+        .title {
+          font-size: 1.3rem;
+        }
+        .description {
+          font-size: 1rem;
+          a {
+            color: black;
+            font-weight: bold;
+          }
+        }
+        .link {
+          color: black;
+          font-weight: bold;
+          text-decoration: none;
+          display: flex;
+          gap: 1rem;
+          svg {
+            font-size: 1rem;
+          }
+        }
+      }
+      .image {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        img {
+          height: 15rem;
+        }
+      }
+    }
+  }
+}

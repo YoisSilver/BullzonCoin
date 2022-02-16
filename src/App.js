@@ -1,25 +1,86 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import scrollreveal from 'scrollreveal'
+import Epicrich from './components/Epicrich'
+import Faucet from './components/Faucet'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
+import Tokenomics from './components/Tokenomics'
+import Upcoming from './components/Upcoming'
+import Welcome from './components/Welcome'
+import "./scss/index.scss"
 
-function App() {
+
+export default function App() {
+  useEffect(() => {
+    const registerAnimations1 = () => {
+      const sr = scrollreveal({
+        origin: "left",
+        distance: "80px",
+        duration: 2000,
+        reset: false,
+      });
+      sr.reveal(
+        ` navbar,
+        .welcome,
+        .epicrich,
+        .upcoming`,
+        {
+          interval: 500,
+        }
+      );
+    };
+    registerAnimations1();
+  }, []);
+
+  useEffect(() => {
+    const registerAnimations2 = () => {
+      const sr = scrollreveal({
+        origin: "right",
+        distance: "80px",
+        duration: 2000,
+        reset: false,
+      });
+      sr.reveal(
+        `
+        .tokenomics`,
+        {
+          interval: 500,
+        }
+      );
+    };
+    registerAnimations2();
+  }, []);
+
+  useEffect(() => {
+    const registerAnimations3 = () => {
+      const sr = scrollreveal({
+        origin: "bottom",
+        distance: "80px",
+        duration: 2000,
+        reset: false,
+      });
+      sr.reveal(
+        `.faucet`,
+        {
+          interval: 500,
+        }
+      );
+    };
+    registerAnimations3();
+  }, []);
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <Navbar />
+      <Welcome />
+      <Tokenomics />
+      <Epicrich />
+      <Faucet />
+      <Upcoming />
+      <Footer />
     </div>
   );
 }
-
-export default App;
