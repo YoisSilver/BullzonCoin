@@ -43,10 +43,10 @@ export default function Faucet() {
               color="secondary"
               fullWidth
             />
+            <Button variant="contained">
+              Submit <MdArrowForward />
+            </Button>
           </form>
-          <Button variant="contained">
-            Submit <MdArrowForward />
-          </Button>
         </div>
       </div>
       <div className="whitelinebig"></div>
